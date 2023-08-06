@@ -9,6 +9,14 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+:root {
+  --gradient-color: linear-gradient(45deg, rgba(247,253,254,1) 0%, rgba(225,241,245,1) 35%, rgba(229,180,244,1) 100%);
+  --gradient-dark-color: linear-gradient(45deg, rgba(248,247,250,1) 0%, rgba(240,205,221,1) 35%, rgba(226,196,211,1) 100%);
+  --gradient-blue-color: linear-gradient(45deg, rgba(110,159,237,1) 0%, rgba(151,127,241,1) 35%, rgba(150,70,241,1) 100%);
+  --gradient-header-color: linear-gradient(45deg, rgba(23,59,108,1) 0%, rgba(122,126,204,1) 35%, rgba(82,61,154,1) 100%);
+  --gradient-background-color: linear-gradient(90deg, rgba(246,233,255,1) 0%, rgba(252,249,232,1) 50%, rgba(201,232,250,1) 100%);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -43,7 +51,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #149ddd;
+  background: var(--gradient-blue-color);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -104,12 +112,14 @@ h6 {
 #header .profile h1 a:hover {
   color: #1d1e20;
   text-decoration: none;
+  background: var(--gradient-header-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 #header .profile .social-links a {
   font-size: 14px;
   display: inline-block;
-  background: #212431;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -119,6 +129,8 @@ h6 {
   width: 30px;
   height: 30px;
   transition: 0.3s;
+  background: var(--gradient-blue-color);
+
 }
 
 #header .profile .social-links a:hover {
@@ -196,6 +208,9 @@ h6 {
 .nav-menu li:hover>a {
   text-decoration: none;
   color: #149ddd;
+  background: var(--gradient-header-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .nav-menu a:hover i,
@@ -203,6 +218,22 @@ h6 {
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
   color: #149ddd;
+  background: var(--gradient-header-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.nav-menu .active:focus {
+  font-size: 1.1rem;
+}
+
+.nav-menu .active::before {
+  content: "";
+  width: 2px;
+  height: 50%;
+  background: var(--gradient-blue-color);
+  position: absolute;
+  left: 0;
 }
 
 /* Mobile Navigation */
@@ -215,7 +246,7 @@ h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #149ddd;
+  background: var(--gradient-blue-color);
   color: #fff;
   width: 40px;
   height: 40px;
@@ -270,6 +301,12 @@ h6 {
   color: #fff;
 }
 
+#hero h1 span {
+  background: var(--gradient-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
 #hero p {
   color: #fff;
   margin-bottom: 50px;
@@ -279,9 +316,13 @@ h6 {
 
 #hero p span {
   color: #fff;
+  font-weight: bolder;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid rgb(189,237,244);
+  background: var(--gradient-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 @media (min-width: 1024px) {
@@ -326,6 +367,9 @@ section {
   padding-bottom: 20px;
   position: relative;
   color: #173b6c;
+  background: var(--gradient-header-color);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .section-title h2::after {
